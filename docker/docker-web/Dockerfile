@@ -8,6 +8,11 @@ WORKDIR /code
 ADD src /code/src
 ADD pom.xml /code/pom.xml
 
+# edit settings.xml
+RUN rm -r $MAVEN_HOME/conf/settings.xml
+
+ADD settings.xml $MAVEN_HOME/conf/settings.xml
+
 # bulid project
 RUN mvn clean install package
 
