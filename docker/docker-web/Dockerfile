@@ -1,4 +1,4 @@
-FROM comm/tomcat7
+FROM index.alauda.cn/mintvp/tomcat
 
 MAINTAINER "huangzq@asiainfo.com"
 
