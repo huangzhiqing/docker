@@ -17,11 +17,11 @@ ADD settings.xml $MAVEN_HOME/conf/settings.xml
 RUN mvn clean install package
 
 # clean maven rep
-rm -rf /usr/.m2/repository
+RUN rm -rf /usr/.m2/repository
 
 RUN yes|cp target/*.war $CATALINA_HOME/webapps
 
-rm -rf /code
+RUN rm -rf /code
 
 
 
