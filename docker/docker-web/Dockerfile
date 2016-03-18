@@ -5,13 +5,8 @@ MAINTAINER "huangzq@asiainfo.com"
 RUN mkdir -p /code
 WORKDIR /code
 
-ADD /src /code/src
-ADD /pom.xml /code/pom.xml
-
-# edit settings.xml
-RUN rm -r $MAVEN_HOME/conf/settings.xml
-
-ADD settings.xml $MAVEN_HOME/conf/settings.xml
+ADD src /code/src
+ADD pom.xml /code/pom.xml
 
 # bulid project
 RUN mvn clean install package
@@ -22,6 +17,7 @@ RUN rm -rf /usr/.m2/repository
 RUN yes|cp target/*.war $CATALINA_HOME/webapps
 
 RUN rm -rf /code
+
 
 
 
