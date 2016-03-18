@@ -5,13 +5,13 @@ MAINTAINER "huangzq@asiainfo.com"
 RUN mkdir -p /code
 WORKDIR /code
 
-ADD /docker-web/src /code/src
-ADD /docker-web/pom.xml /code/pom.xml
+ADD src /code/src
+ADD pom.xml /code/pom.xml
 
 # edit settings.xml
 RUN rm -r $MAVEN_HOME/conf/settings.xml
 
-ADD /docker-web/settings.xml $MAVEN_HOME/conf/settings.xml
+ADD settings.xml $MAVEN_HOME/conf/settings.xml
 
 # bulid project
 RUN mvn clean install package
