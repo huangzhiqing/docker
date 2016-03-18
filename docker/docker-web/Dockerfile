@@ -5,6 +5,10 @@ MAINTAINER "huangzq@asiainfo.com"
 RUN mkdir -p /code
 WORKDIR /code
 
+RUN pwd
+
+RUN ls
+
 ADD src /code/docker-web/src
 ADD pom.xml /code/docker-web/pom.xml
 
