@@ -6,7 +6,7 @@ RUN mkdir -p /code
 WORKDIR /code
 
 ADD docker/docker-web/src /code/src
-ADD pom.xml /code/pom.xml
+ADD docker/docker-web/pom.xml /code/pom.xml
 
 # bulid project
 RUN mvn clean install package
