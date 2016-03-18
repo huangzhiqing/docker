@@ -5,7 +5,7 @@ MAINTAINER "huangzq@asiainfo.com"
 RUN mkdir -p /code
 WORKDIR /code
 
-ADD src /code/src
+ADD docker/docker-web/src /code/src
 ADD pom.xml /code/pom.xml
 
 # bulid project
